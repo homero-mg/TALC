@@ -1,0 +1,173 @@
+/* ===================== RESET ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================== FUENTES Y CUERPO ===================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ===================== MENÚ SUPERIOR ===================== */
+.barra_superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(49, 0, 0, 0.9);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 0.5rem 0;
+}
+
+/* ===================== CONTENIDO ===================== */
+.contenido {
+  margin-top: 125px;
+  min-height: 100vh;
+}
+
+/* ===================== PANEL PRINCIPAL ===================== */
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url("img/pasteleria.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* <-- hace que el fondo quede fijo */
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.panel h1,
+.panel p,
+.galeria_productos {
+  position: relative;
+  z-index: 2;
+}
+
+.panel h1 {
+  font-size: 4rem;
+  font-family: "Adelia";
+  color: #feffb8;
+  margin-bottom: 1rem;
+}
+
+.panel p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+/* ===================== GALERÍA ===================== */
+.galeria_productos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.galeria_productos .item {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s;
+}
+
+.galeria_productos .item:hover {
+  transform: scale(1.05);
+}
+
+.galeria_productos img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria_productos img:hover {
+  box-shadow: 0 0 15px rgb(255, 0, 170);
+}
+
+.galeria_productos h3 {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  color: #feffb8;
+}
+
+/* ===================== DETALLE DE PRODUCTOS ===================== */
+.detalle_productos {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding: 12rem 1rem 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas con fondo blanco translúcido */
+.tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: rgba(255, 255, 255, 0.85); /* fondo blanco con transparencia */
+  backdrop-filter: blur(6px); /* opcional: da un efecto elegante */
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Alternar efecto paso de cebra */
+.tarjeta:nth-child(even) {
+  flex-direction: row-reverse;
+  background: rgba(255, 255, 255, 0.7); /* un poco más claro */
+}
+
+/* Imagen */
+.tarjeta img {
+  width: 550px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Texto */
+.descripcion {
+  flex: 1;
+  color: #000;
+  text-align: left;
+}
+
+.descripcion h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.descripcion p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
